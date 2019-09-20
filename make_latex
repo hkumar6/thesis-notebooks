@@ -1,0 +1,10 @@
+#!/bin/sh
+nbFiles="normal_forms_consensus dynamic_bifurcation fast_slow_connected"
+
+for f in $nbFiles
+do
+  jupyter-nbconvert --to markdown $f.ipynb --TagRemovePreprocessor.remove_cell_tags='{"remove_cell"}'
+  pandoc --listings -f markdown -t latex $f.md -o $f.tex
+  sed -i '' 's/lstlisting/minted/g' $f.tex
+  sed -i '' 's/\[language=Python\]/\{python\}/g' $f.tex
+done

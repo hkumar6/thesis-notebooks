@@ -1,6 +1,9 @@
 # Dynamics on digraphs
 
-A collection of jupyter notebooks and other scripts as supplement for [my master thesis](https://github.com/hkumar6/master_thesis).
+A collection of jupyter notebooks and other scripts as supplement for my master thesis.
+
+## Python package
+[net_sym](https://github.com/hkumar6/thesis-notebooks/blob/master/net_sym.py) : Network symmetrization toolbox containing a set of useful functions for the symmetrization algorithm
 
 ## Bifurcations
 
@@ -15,3 +18,6 @@ A collection of jupyter notebooks and other scripts as supplement for [my master
 * [Canards on a 2-node digraph (Section 3.5)](https://github.com/hkumar6/thesis-notebooks/blob/master/canards.m)
 
 ## Symmetrization
+
+* [Enumeration of digraphs (Section 4.5)](https://github.com/hkumar6/thesis-notebooks/blob/master/all_digraphs.py)
+* [Producing figures for the symmetrization algorithm (Section 4.6)](https://github.com/hkumar6/thesis-notebooks/blob/master/sym_conjecture.py)

@@ -1,0 +1,90 @@
+\hypertarget{dynamic-bifurcation-of-consensus}{%
+\section{Dynamic bifurcation of
+consensus}\label{dynamic-bifurcation-of-consensus}}
+
+We consider the fast-slow system:
+
+\begin{equation}\label{appendix_fast_slow}
+\begin{aligned}
+\dot{\mathbf{x}} &= -D\mathbf{x} + A\mathbf{S}(\mathbf{x}, u) \\
+\dot{u} &= -\varepsilon .
+\end{aligned}
+\end{equation}
+
+\begin{minted}{python}
+import networkx as nx
+import numpy as np
+from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt
+import pylab
+import matplotlib2tikz as mplt2tikz
+import net_sym as ns
+\end{minted}
+
+\begin{minted}{python}
+g = ns.get_strongly_connected_digraph(10)
+# To take a graph from X, comment the line above
+# and uncomment the lines below
+# g = nx.DiGraph()
+# g.add_edges_from(([1,0],[0,2],[2,1]))
+N = nx.number_of_nodes(g)
+A = nx.adjacency_matrix(g)
+D = np.diag(np.asarray(np.sum(A, axis=1)).reshape(-1))
+\end{minted}
+
+In the system given by \cref{appendix_fast_slow}, we take
+\([\mathbf{S}(\mathbf{x},u)]_i = S(x_i,u)\) and
+
+\begin{equation}
+S(x,u) := x + u + x^2.
+\end{equation}
+
+\begin{minted}{python}
+s_xu = lambda x,u: x + u + np.square(x)
+phi_xu = lambda x,u: s_xu(x,u) - x
+
+x_range = np.arange(-2.1, 2.1, 0.01)
+\end{minted}
+
+To integrate the system \cref{appendix_fast_slow}, we use
+\(\varepsilon = 0.1\).
+
+\begin{minted}{python}
+dt = 0.01
+epsilon = 0.1
+u_range = np.arange(0.7, 1.5, dt)
+n_iter = 1000
+x_n = np.zeros((np.size(u_range), N))
+
+u = 0.5
+
+f_t = lambda t,x: np.append(
+    -D.dot(x[:-1]) + A.dot(s_xu(x[:-1],x[-1])), 
+    epsilon)
+res = solve_ivp(
+    fun=f_t, 
+    t_span=[0,10090], 
+    y0=np.append(-2 + np.random.rand(N)/10, -1), 
+    method="BDF")
+\end{minted}
+
+We find a reasonable index of the solution array before the values
+become too large.
+
+\begin{minted}{python}
+k = np.min(np.where(res.y[0,:] > 2))
+\end{minted}
+
+Plot the diagram \cref{fig_dyn_bif}.
+
+\begin{minted}{python}
+plt.figure(figsize=(7,5))
+plt.plot(x_range, -phi_xu(x_range,0), color='black')
+plt.scatter(res.y[0,0:k], res.y[N,0:k], color='red')
+plt.xlabel(r"$x$")
+plt.ylabel(r"$u$")
+plt.title('Trajectory on the consensus space')
+mplt2tikz.save("dynamic_bif_trajectory.tex")
+plt.grid()
+\end{minted}
+

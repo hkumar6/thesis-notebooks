@@ -1,6 +1,6 @@
 images/*
 slides/*
-canard-tests[0-9]/*
+others/canard-tests[0-9]/*
 
 # Created by https://www.gitignore.io/api/python,osx,linux,jupyter
 

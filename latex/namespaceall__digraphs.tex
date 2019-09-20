@@ -1,0 +1,67 @@
+\hypertarget{namespaceall__digraphs}{}\doxysubsection{all\+\_\+digraphs Namespace Reference}
+\label{namespaceall__digraphs}\index{all\_digraphs@{all\_digraphs}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceall__digraphs_a6c77b5dbb70763e4c4c13cf07864d1aa}\label{namespaceall__digraphs_a6c77b5dbb70763e4c4c13cf07864d1aa}} 
+dictionary {\bfseries graph\+\_\+list} = \{\}
+\item 
+\mbox{\Hypertarget{namespaceall__digraphs_aedc5819c86dcafed8a20cd8c53b08b5e}\label{namespaceall__digraphs_aedc5819c86dcafed8a20cd8c53b08b5e}} 
+int {\bfseries n} = 6
+\item 
+{\bfseries f}
+\item 
+\mbox{\Hypertarget{namespaceall__digraphs_ab69ad0f2207a2c874f418a716887a706}\label{namespaceall__digraphs_ab69ad0f2207a2c874f418a716887a706}} 
+{\bfseries g} = nx.\+Di\+Graph()
+\item 
+\mbox{\Hypertarget{namespaceall__digraphs_ae06dfde54080613bc5b6a9ff8c7b30d4}\label{namespaceall__digraphs_ae06dfde54080613bc5b6a9ff8c7b30d4}} 
+bool {\bfseries accept} = True
+\item 
+\mbox{\Hypertarget{namespaceall__digraphs_aa9ed6c3f9c3aba550851c37373ef2544}\label{namespaceall__digraphs_aa9ed6c3f9c3aba550851c37373ef2544}} 
+{\bfseries e} = np.\+array(\mbox{[}int(j) for j in str.\+split(l)\mbox{]})
+\item 
+int {\bfseries r}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\begin{DoxyVerb}Enumeration of digraphs
+
+Generate all digraphs for a given number of nodes (n)
+with the following properties:
+- No bi-directional edges.
+- The underlying undirected graph (L = AWA^T) is connected.
+- No isomorphic duplicates. (none found after the above 
+    conditions)
+
+K_n has n(n-1)/2 edges, any more will give rise to self-loops 
+and hence can be ignored in the loop.
+\end{DoxyVerb}
+ 
+
+\doxysubsubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceall__digraphs_a4923b3b30f941f3342ec113981520632}\label{namespaceall__digraphs_a4923b3b30f941f3342ec113981520632}} 
+\index{all\_digraphs@{all\_digraphs}!f@{f}}
+\index{f@{f}!all\_digraphs@{all\_digraphs}}
+\doxyparagraph{\texorpdfstring{f}{f}}
+{\footnotesize\ttfamily all\+\_\+digraphs.\+f}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  open(}
+\DoxyCodeLine{2     \textcolor{stringliteral}{"/Users/kumarharsha/thesis/graph\_data/graph"}+str(n)+\textcolor{stringliteral}{"cd.txt"},}
+\DoxyCodeLine{3     \textcolor{stringliteral}{"r"})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceall__digraphs_afc56c936bff9f80029382f50e8ca5fb0}\label{namespaceall__digraphs_afc56c936bff9f80029382f50e8ca5fb0}} 
+\index{all\_digraphs@{all\_digraphs}!r@{r}}
+\index{r@{r}!all\_digraphs@{all\_digraphs}}
+\doxyparagraph{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily int all\+\_\+digraphs.\+r}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  n -\/ np.linalg.matrix\_rank(}
+\DoxyCodeLine{2         \mbox{\hyperlink{namespacenet__sym_a704630df5790fa61982803ca7cad31fb}{net\_sym.out\_degree\_laplacian}}(g))}
+
+\end{DoxyCode}

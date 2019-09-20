@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+\clip (0,0) rectangle (6,6);
+\Vertex[x=5.650,y=3.000,color=1]{0}
+\Vertex[x=1.675,y=0.705,color=1]{1}
+\Vertex[x=4.325,y=5.295,color=1]{2}
+\Vertex[x=1.675,y=5.295,color=0]{3}
+\Vertex[x=4.325,y=0.705,color=0]{4}
+\Vertex[x=0.350,y=3.000,color=1]{5}
+\Edge[,color=blue](0)(1)
+\Edge[,color=blue](0)(2)
+\Edge[,color=blue](0)(3)
+\Edge[,color=red](0)(4)
+\Edge[,color=blue](0)(5)
+\Edge[,color=blue](1)(2)
+\Edge[,color=blue](1)(3)
+\Edge[,color=blue](1)(4)
+\Edge[,color=blue](1)(5)
+\Edge[,color=red](2)(3)
+\Edge[,color=blue](2)(4)
+\Edge[,color=blue](2)(5)
+\Edge[,color=red](3)(4)
+\Edge[,color=blue](3)(5)
+\Edge[,color=blue](4)(5)
+\end{tikzpicture}

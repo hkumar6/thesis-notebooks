@@ -1,7 +1,11 @@
 % This file was created by matplotlib2tikz v0.7.4.
 \begin{tikzpicture}
 
+\definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
+
 \begin{axis}[
+hide x axis,
+hide y axis,
 legend cell align={left},
 legend style={at={(0.03,0.97)}, anchor=north west, draw=white!80.0!black},
 tick align=outside,
@@ -218,7 +222,7 @@ table {%
 0.980000000000002 1.4504
 0.990000000000002 1.4751
 };
-\addlegendentry{$S_{t}$}
+\addlegendentry{$S_\mathrm{t}$}
 \addplot [semithick, green!50.19607843137255!black, forget plot]
 table {%
 -0.0625 -0.25
@@ -439,7 +443,7 @@ table {%
 0.9875 -1.27469507659596
 0.9975 -1.2795630140987
 };
-\addlegendentry{$S_{sn}^{-1}$}
+\addlegendentry{$S_\mathrm{t}^{-1}$}
 \addplot [semithick, black, dashed, forget plot]
 table {%
 -1 -1
@@ -642,6 +646,16 @@ table {%
 0.970000000000002 0.970000000000002
 0.980000000000002 0.980000000000002
 0.990000000000002 0.990000000000002
+};
+\addplot [semithick, color0, forget plot]
+table {%
+-1.099875 -2.22044604925031e-16
+1.097375 -2.22044604925031e-16
+};
+\addplot [semithick, color0, forget plot]
+table {%
+-4.44089209850063e-16 -1.5
+-4.44089209850063e-16 1.5
 };
 \end{axis}
 

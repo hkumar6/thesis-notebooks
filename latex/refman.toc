@@ -1,0 +1,22 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Namespace Index}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Namespace List}{1}{section.1.1}% 
+\contentsline {chapter}{\numberline {2}Namespace Documentation}{3}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}all\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}digraphs Namespace Reference}{3}{section.2.1}% 
+\contentsline {subsection}{\numberline {2.1.1}Detailed Description}{3}{subsection.2.1.1}% 
+\contentsline {section}{\numberline {2.2}net\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}sym Namespace Reference}{3}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}Detailed Description}{4}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}Function Documentation}{4}{subsection.2.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.2.1}get\_strongly\_connected\_digraph()}{4}{subsubsection.2.2.2.1}% 
+\contentsline {subsubsection}{\numberline {2.2.2.2}graph\_from\_laplacian()}{4}{subsubsection.2.2.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.2.3}orth\_matrix()}{5}{subsubsection.2.2.2.3}% 
+\contentsline {subsubsection}{\numberline {2.2.2.4}out\_degree\_laplacian()}{5}{subsubsection.2.2.2.4}% 
+\contentsline {subsubsection}{\numberline {2.2.2.5}symmetrised\_laplacian()}{5}{subsubsection.2.2.2.5}% 
+\contentsline {section}{\numberline {2.3}sym\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}conjecture Namespace Reference}{5}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Detailed Description}{6}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}Function Documentation}{6}{subsection.2.3.2}% 
+\contentsline {subsubsection}{\numberline {2.3.2.1}draw\_sym\_both()}{6}{subsubsection.2.3.2.1}% 
+\contentsline {subsection}{\numberline {2.3.3}Variable Documentation}{6}{subsection.2.3.3}% 
+\contentsline {subsubsection}{\numberline {2.3.3.1}graph\_list4}{6}{subsubsection.2.3.3.1}% 
+\contentsline {subsubsection}{\numberline {2.3.3.2}graph\_list5}{7}{subsubsection.2.3.3.2}% 
+\contentsline {subsubsection}{\numberline {2.3.3.3}graph\_list6}{7}{subsubsection.2.3.3.3}% 
