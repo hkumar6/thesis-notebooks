@@ -2,6 +2,8 @@ images/*
 slides/*
 others/canard-tests[0-9]/*
 
+*.swp
+
 # Created by https://www.gitignore.io/api/python,osx,linux,jupyter
 
 #!! ERROR: jupyter is undefined. Use list command to see defined gitignore types !!#

@@ -10,13 +10,7 @@ We consider the system:
 \end{aligned}
 \end{equation}
 
-where $[\mathbf{S}(\mathbf{x},u)]_i = S(x_i,u)$
-
-and $S(x,u) = 2x - \frac{x^3}{3} + u$.
-
-Then, $\phi(x,u) = S(x,u) - x$.
-
-Take $\varepsilon = 10^{-4}$.
+where $[\mathbf{S}(\mathbf{x},u)]_i = S(x_i,u)$.
 
 
 ```python
@@ -37,18 +31,30 @@ from scipy.linalg import orth
 from scipy.linalg import null_space
 ```
 
+We consider
+
+\begin{equation}
+S(x,u) = 2x - \frac{x^3}{3} + u.
+\end{equation}
+
+Then, 
+\begin{equation}
+\phi(x,u) = S(x,u) - x.
+\end{equation}
+
 
 ```python
 s_xu = lambda x,u: 2*x - np.power(x,3)/3 + u
-phi_xu = lambda x,u: x - s_xu(x,u)
+phi_xu = lambda x,u: s_xu(x,u) - x
 
-x_range = np.arange(-2, 2, 0.01)
+x_range = np.arange(-2.2, 2, 0.01)
 ```
 
-Integrate
+Integrate using $\varepsilon = 0.05$.
 
 
 ```python
+eps = 0.05
 dt = 0.01
 u_range = np.arange(0.7, 1.5, dt)
 n_iter = 1000
@@ -59,17 +65,17 @@ u = 0.5
 
 f_t = lambda t,x:np.append(
     -D.dot(x[:-1]) + A.dot(s_xu(x[:-1],x[-1])),
-    -1e-4)
+    -eps)
 res = solve_ivp(
     fun=f_t, 
-    t_span=[0,8000], 
+    t_span=[0,30], 
     y0=np.append(1.2 + np.random.rand(N)/10, 0.1), 
     method="BDF")
 ```
 
 
 ```python
-plt.plot(x_range, phi_xu(x_range,0), color='black')
+plt.plot(x_range, -phi_xu(x_range,0), color='black')
 plt.plot(res.y[0,:], res.y[N,:], color='red')
 plt.xlabel('x')
 plt.ylabel('u')
@@ -93,7 +99,7 @@ We now make a modification to the previous system to get periodic orbits:
 ```python
 f_t = lambda t,x:np.append(
     -D.dot(x[:-1]) + A.dot(s_xu(x[:-1],x[-1])),
-    -np.mean(x[:-1])*0.05)
+    -np.mean(x[:-1])*eps)
 res2 = solve_ivp(
     fun=f_t,
     t_span=[0,100],
@@ -103,7 +109,7 @@ res2 = solve_ivp(
 
 
 ```python
-plt.plot(x_range, phi_xu(x_range,0), color='black')
+plt.plot(x_range, -phi_xu(x_range,0), color='black')
 plt.plot(res2.y[0,:], res2.y[N,:], color='red')
 plt.xlabel(r'$x$')
 plt.ylabel(r'$u$')
@@ -126,11 +132,11 @@ The reduced system dynamics are:
 
 ```python
 red_f = lambda t,x: np.array([
-    -phi_xu(x[0],x[1]),
-    -x[0]*1e-4])
+    phi_xu(x[0],x[1]),
+    -x[0]*eps])
 red_res = solve_ivp(
     fun=red_f,
-    t_span=[0,40000],
+    t_span=[0,100],
     y0=[1.23,0.5],
     method="BDF")
 ```
@@ -138,7 +144,7 @@ red_res = solve_ivp(
 
 ```python
 plt.plot(red_res.y[0], red_res.y[1])
-plt.plot(x_range, phi_xu(x_range,0))
+plt.plot(x_range, -phi_xu(x_range,0))
 plt.xlabel(r"$x$")
 plt.ylabel(r"$u$")
 plt.title("Reduced system")
