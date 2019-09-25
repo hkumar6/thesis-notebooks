@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/189004995.svg)](https://zenodo.org/badge/latestdoi/189004995)
+
+
 # Bifurcations on and Symmetrization of Digraphs
 
 A collection of jupyter notebooks and other scripts as supplement for my master thesis with the same title.
